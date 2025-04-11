@@ -1,21 +1,20 @@
-# rapid-triples
+# rapid-triples for generating a questionnaire KG
 
-Generate RDF using a form-based interface.
-Fork the template and configure it with your own form.
+Generate a KG of questionnaires by using a form-based interface.
 
 ### Run it locally
 
 Build the image
 ```sh
-docker build -f Dockerfile-build --no-cache -t cefriel/rapid-triples .
+docker build -f Dockerfile-build --no-cache -t cefriel/qkg-rapid-triples .
 ```
 
 Run the image
 ```sh
-docker run -p 8080:80 cefriel/rapid-triples
+docker run -p 8080:80 cefriel/qkg-rapid-triples
 ```
 
-Visit http://localhost:8080.
+Visit http://localhost:8080/qkg-rapid-triples.
 
 ### Update online
 

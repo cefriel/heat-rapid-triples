@@ -18,7 +18,7 @@
         components: { Footer, Topbar },
         data() {
             return {
-                app_name: 'Cefriel RDF Metadata Generator',
+                app_name: 'Cefriel KG Questionnaire Generator',
                 app_logo: require('@/assets/logo.png'),
                 path_items: [],
                 username : window.localStorage.getItem('auth-user')
