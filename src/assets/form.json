@@ -2,29 +2,29 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-        "doiDocument": {
-            "type": "string",
-            "title": "Bibliographic Source:",
-            "default": "DOI Link",
-            "description": "Add DOI link here"
-        },
-        "descriptionDocument": {
-            "type": "string",
-            "x-display": "textarea",
-            "title": "Insert full citation here",
-            "description": "Insert full citation of the bibliographic source"
-        },
-        "toolName": {
+        "title": {
             "type": "string",
             "title": "Evaluation Tool:",
             "default": "[Evaluation Tool Name]",
             "description": "Required name of the evaluation tool."
         },
-        "toolDescription": {
+        "description": {
             "type": "string",
             "x-display": "textarea",
             "title": "Evaluation Tool Description",
             "description": "Description of the evaluation tool"
+        },
+        "doi": {
+            "type": "string",
+            "title": "Bibliographic Source",
+            "default": "DOI Link",
+            "description": "Add DOI link here"
+        },
+        "doiDescription": {
+            "type": "string",
+            "x-display": "textarea",
+            "title": "Insert full citation here",
+            "description": "Insert full citation of the bibliographic source"
         },
         "resourceDiagram": {
             "title": "Tool Diagram URL",
