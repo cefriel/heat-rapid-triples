@@ -1,38 +1,68 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
+    "layout": {
+        "options": {
+            "readOnlyPropertiesMode": "hide",
+            "density": "compact"
+        }
+    },
     "properties": {
-        "doiDocument": {
-            "type": "string",
-            "title": "Bibliographic Source:",
-            "default": "DOI Link",
-            "description": "Add DOI link here"
-        },
-        "descriptionDocument": {
-            "type": "string",
-            "x-display": "textarea",
-            "title": "Insert full citation here",
-            "description": "Insert full citation of the bibliographic source"
-        },
-        "toolName": {
+        "title": {
             "type": "string",
             "title": "Evaluation Tool:",
             "default": "[Evaluation Tool Name]",
             "description": "Required name of the evaluation tool."
         },
-        "toolDescription": {
+        "description": {
             "type": "string",
-            "x-display": "textarea",
+            "layout": "textarea",
             "title": "Evaluation Tool Description",
             "description": "Description of the evaluation tool"
         },
-        "resourceDiagram": {
+        "doi": {
+            "type": "string",
+            "title": "Bibliographic Source",
+            "default": "DOI Link",
+            "description": "Add DOI link here"
+        },
+        "doiDescription": {
+            "type": "string",
+            "layout": "textarea",
+            "title": "Insert full citation here",
+            "description": "Insert full citation of the bibliographic source"
+        },
+        "modelDiagram": {
+            "layout": "custom-url-open",
             "title": "Tool Diagram URL",
-            "type": "string"
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "title": "Title",
+                    "description": "Title of the resource"
+                },
+                "format": {
+                    "title": "Format",
+                    "type": "string",
+                    "description": "Format of the resource (cf. http://bekoations.europa.eu/resource/dataset/file-type)",
+                    "examples": [
+                        "PDF",
+                        "Excel",
+                        "Word",
+                        "PNG",
+                        "JPEG"
+                    ]
+                },
+                "url": {
+                    "title": "URL",
+                    "type": "string",
+                    "description": "URL of the resource"
+                }
+            }
         },
         "contextName": {
             "type": "string",
-            "x-display": "textarea",
+            "layout": "textarea",
             "title": "Context it belongs to:",
             "default": "[Context Name]",
             "description": "Context reported in the bibliographic source",
@@ -40,7 +70,7 @@
         },
         "contextDescription": {
             "type": "string",
-            "x-display": "textarea",
+            "layout": "textarea",
             "title": "Context Description",
             "description": "Description of the context to which the evaluation tool belongs"
         },
@@ -58,11 +88,11 @@
                     },
                     "constructDescription": {
                         "type": "string",
-                        "x-display": "textarea",
+                        "layout": "textarea",
                         "title": "Description",
                         "description": "Description of the construct that belongs to the evaluation tool"
                     },
-                        "Question": {
+                    "hasQuestion": {
                         "title": "Questions of the Construct",
                         "description": "Question associated to the construct",
                         "type": "array",
@@ -101,32 +131,32 @@
         "id": {
             "title": "Identifier",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         },
         "created": {
             "title": "Creation datetime",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         },
         "modified": {
             "title": "Modification datetime",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         },
         "status": {
             "title": "Status",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         },
         "type": {
             "title": "Type",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         },
         "user": {
             "title": "User",
             "type": "string",
-            "x-display": "hidden"
+            "readOnly": true
         }
     }
 }

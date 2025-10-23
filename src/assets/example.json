@@ -1,0 +1,54 @@
+{
+  "hasConstruct": [
+    {
+      "hasQuestion": [
+        {
+          "questionText": "PEU question 1",
+          "likertAnswerNumericalRange": "[0-5]",
+          "likertAnswerTextualRange": "[Strongly Disagree-Strongly Agree]"
+        },
+        {
+          "questionText": "PEU question 2",
+          "likertAnswerNumericalRange": "[0-5]",
+          "likertAnswerTextualRange": "[Strongly Disagree-Strongly Agree]"
+        }
+      ],
+      "constructName": "PEU",
+      "constructDescription": "PEU description"
+    },
+    {
+      "hasQuestion": [
+        {
+          "questionText": "BI question1",
+          "likertAnswerNumericalRange": "[0-5]",
+          "likertAnswerTextualRange": "[Strongly Disagree-Strongly Agree]",
+          "isScaleReversed": true
+        },
+        {
+          "questionText": "BIquestion2",
+          "likertAnswerNumericalRange": "[0-5]",
+          "likertAnswerTextualRange": "[Strongly Disagree-Strongly Agree]"
+        }
+      ],
+      "constructName": "BI",
+      "constructDescription": "BI description"
+    }
+  ],
+  "contextName": "TAM context",
+  "modelDiagram": {
+    "url": "http://miodoc.org",
+    "format": "URL",
+    "title": "Tool Diagram URL"
+  },
+  "title": "TAM",
+  "doi": "http://doi1",
+  "doiDescription": "full citation1",
+  "description": "tam description",
+  "contextDescription": "TAM context description",
+  "created": "2025-10-23T07:40:13.535Z",
+  "modified": "2025-10-23T07:40:13.536Z",
+  "type": "heat",
+  "status": "draft",
+  "id": "c6ee1ef0-76ce-4d17-a561-74189863918b",
+  "user": "testuser"
+}
