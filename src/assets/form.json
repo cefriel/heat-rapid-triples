@@ -62,7 +62,7 @@
                         "title": "Description",
                         "description": "Description of the construct that belongs to the evaluation tool"
                     },
-                        "Question": {
+                    "hasQuestion": {
                         "title": "Questions of the Construct",
                         "description": "Question associated to the construct",
                         "type": "array",
@@ -76,13 +76,13 @@
                                 },
                                 "likertAnswerNumericalRange": {
                                     "type": "string",
-                                    "examples": ["[0-5]", "[1-7]", "[1-9]"],
+                                    "examples": ["[0-4]","[1-5]","[1-6]","[1-7]"],
                                     "description": "Range in which the question's answer is defined",
                                     "title": "Numerical answer value range"
                                 },
                                 "likertAnswerTextualRange": {
                                     "type": "string",
-                                    "examples": ["[Bad-Good]", "[Low-High]", "[Strongly Disagree-Strongly Agree]", "[Completely Disagree-Completely Agree]"],
+                                    "examples": ["[Poor-Good]", "[Low-High]", "[Never-Always]","[Disagree-Agree]", "[Strongly Disagree-Strongly Agree]","[Extremely Unlikely-Extremely Likely]", "[No, that is not true-Yes, that is true]","[To a very small extent-To a very large extent]"],
                                     "description": "Range in which the question's answer is defined",
                                     "title": "Textual answer value range"
                                 },
