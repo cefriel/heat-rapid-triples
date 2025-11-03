@@ -16,10 +16,16 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 {{procedure_iri | safe}} a heat:Tool ;
-	rdfs:label "{{obj.title}}"^^xsd:string ;
-	dcterms:description """{{obj.description}}"""^^xsd:string ;	
-	heat:hasModelDiagram <{{obj.modelDiagram.url | safe}}> ;
-	dcterms:isReferencedBy <{{obj.doi | safe}}> .
+  {% if obj.description %}
+	dcterms:description """{{obj.description}}"""^^xsd:string ;
+  {% endif %}
+  {% if obj.hasModelDiagram %}
+  heat:hasModelDiagram <{{obj.modelDiagram.url | safe}}> ;
+  {% endif %}
+  {% if obj.doi %}
+	dcterms:isReferencedBy <{{obj.doi | safe}}> ;
+  {% endif %}
+  rdfs:label "{{obj.title}}"^^xsd:string .
 
 <{{obj.doi | safe}}> a bibo:Document ;
 	dcterms:description """{{obj.doiDescription}}"""^^xsd:string .
