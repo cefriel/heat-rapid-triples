@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-    publicPath: process.env.NODE_ENV === "production" ? "/qkg-rapid-triples/" : "/",
+    publicPath: process.env.NODE_ENV === "production" ? "/heat-rapid-triples/" : "/",
     transpileDependencies: [
         "vuetify",
         "@koumoul/vjsf"
