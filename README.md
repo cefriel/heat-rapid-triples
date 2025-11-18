@@ -1,20 +1,23 @@
-# rapid-triples for generating a questionnaire KG
+# rapid-triples for contributing to the HEAT KG
 
-Generate a KG of questionnaires by using a form-based interface.
+Contribute to the HEAT KG by describing a new Human Evaluation and Assessment Tool using the HEAT Ontology (https://w3id.org/heat). 
+- Access the web app at https://cefriel.github.io/heat-rapid-triples/
+- Fill the form and check the generated RDF triples
+- Download the output and [create a new issue](https://github.com/cefriel/heat-rapid-triples/issues/new/choose) in this repository to propose the addition of the tool 
 
 ### Run it locally
 
 Build the image
 ```sh
-docker build -f Dockerfile-build --no-cache -t cefriel/qkg-rapid-triples .
+docker build -f Dockerfile-build --no-cache -t cefriel/heat-rapid-triples .
 ```
 
 Run the image
 ```sh
-docker run -p 8080:80 cefriel/qkg-rapid-triples
+docker run -p 8080:80 cefriel/heat-rapid-triples
 ```
 
-Visit http://localhost:8080/qkg-rapid-triples.
+Visit http://localhost:8080/heat-rapid-triples.
 
 ### Update online
 
