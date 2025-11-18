@@ -63,6 +63,7 @@
   {{question_iri | safe}} a sur:Question ;
 	  sur:questionText "{{question.questionText}}"^^xsd:string ;
     heat:hasLikertAnswer [
+      a heat:LikertAnswer ;
       heat:numericalValueRange "{{question.likertAnswerNumericalRange}}"^^xsd:string ;
       heat:textualValueRange "{{question.likertAnswerTextualRange}}"^^xsd:string ;
       heat:isScaleReversed "{{question.isScaleReversed}}"^^xsd:boolean 
