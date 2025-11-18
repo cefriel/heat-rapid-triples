@@ -10,7 +10,7 @@ const router= new Router({
     mode: 'history',
     routes: [
         {
-            path: '/qkg-rapid-triples/',
+            path: '/heat-rapid-triples/',
             name: 'asset_create',
             component: AssetCreate,
             props: {

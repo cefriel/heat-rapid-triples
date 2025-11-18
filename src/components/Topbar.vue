@@ -30,7 +30,7 @@
         name: 'App',
         data() {
             return {
-                app_name: 'qkg-rapid-triples: KG Questionnaire Generator',
+                app_name: 'heat-rapid-triples: Contribute to the HEAT KG',
                 app_logo: require('@/assets/cefriel_clogo.png'),
                 project_logo: require('@/assets/perks_logo.png'),
                 path_items: [],
