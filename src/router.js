@@ -14,7 +14,7 @@ const router= new Router({
             name: 'asset_create',
             component: AssetCreate,
             props: {
-                asset_type : 'Procedure'
+                asset_type : 'heat'
             },
             meta: {
                 title: "Cefriel KG Questionnaire Generator",

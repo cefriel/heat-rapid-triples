@@ -2,10 +2,7 @@
   <div>
     <v-row class="px-10 my-2">
       <v-col cols="8" class="py-2">
-        <p><b>Fill the form to generate a KG representing a questionnaire</b>.
-          This page is powered by <a
-          href="https://kcong.cefriel.com/">KCONG</a> (Knowledge Catalogue and Governance) a complete (meta)data catalogue
-          solution developed by <a href="https://www.cefriel.com/">Cefriel</a> and customised for the <a href="https://perks-project.eu/">PERKS</a> project.
+        <p><b>Fill the form to describe a new Human Evaluation and Assessment Tool using the <a href="https://w3id.org/heat">HEAT ontology</a></b>.
         </p>
         <p>You can use the buttons below to <i>Download</i> the content of the form, or to <i>Upload</i> the content of a form previously downloaded.</p>
         <v-row>
@@ -76,7 +73,7 @@ const ajv = new Ajv(); // options can be passed, e.g. {allErrors: true}
 import form_template from 'raw-loader!@/assets/form-lifting.jinja';
 import '@rdfjs-elements/rdf-editor';
 import { parsers } from '@rdf-esm/formats-common'; // Updated
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid4 } from 'uuid';
 
 
 export default {
@@ -226,13 +223,11 @@ export default {
         this.alert_messages = [];
       }
 
-      if (!this.asset.header) {
-        this.asset.header = {};
-      }
-      this.asset.header.creation_time = new Date().toISOString();
-      this.asset.header.last_updated = new Date().toISOString();
-      this.asset.header.type = this.asset_type;
-      this.asset.header.id = uuidv4();
+      this.asset.created = new Date().toISOString();
+      this.asset.modified = new Date().toISOString();
+      this.asset.type = this.asset_type;
+      this.asset.user = "heat-rapid-triples";
+      this.asset.id = uuid4();
 
       function slugify(str) {
         return String(str).normalize('NFKD')
@@ -247,8 +242,9 @@ export default {
       try {
         this.saved_asset_rdf = this.template.render({
           obj: this.asset,
-          data_platform_url: "https://kcong.cefriel.com/",
-          slugify: slugify
+          base_prefix: "https://perks-project.eu/",
+          slugify: slugify,
+          uuid4: uuid4
         });
       } catch (error) {
         console.log(error);
