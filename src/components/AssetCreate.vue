@@ -4,17 +4,18 @@
       <v-col cols="8" class="py-2">
         <p><b>Fill the form to describe a new Human Evaluation and Assessment Tool using the <a href="https://w3id.org/heat">HEAT ontology</a></b>.
         </p>
-        <p>You can use the buttons below to <i>Download</i> the content of the form, or to <i>Upload</i> the content of a form previously downloaded.</p>
+        <p>The content of the form is not saved and is lost if you reload the page. You can use the buttons below to <i>Download</i> the content of the form in JSON or RDF. You can <i>Restore</i> the content of a form from a previously downloaded JSON document.</p>
         <v-row>
-          <v-btn @click="initForm" class="ml-2 mt-2 mr-4">
+          <v-btn @click="initForm" class="ml-2 mt-2">
             <v-icon left>mdi-upload</v-icon>
-            Upload
+            Restore Form
           </v-btn>
           <input ref="formInput" type="file" accept="application/json" style="display:none" @change="onUploadedForm">
-          <v-btn @click="downloadForm" class="mt-2">
+          <v-btn @click="downloadForm" class="ml-2 mt-2 mr-4">
             <v-icon left>mdi-download</v-icon>
-            Download
+            Download Form
           </v-btn>
+          <v-btn color="primary" @click="downloadRDF" class="ml-2 mt-2"> <v-icon left>mdi-download</v-icon> Download RDF</v-btn>
         </v-row>
       </v-col>
     </v-row>
@@ -54,8 +55,6 @@
                 @prefixes-parsed="onPrefixesParsed"
                 @serialized="onSerialized"
             ></rdf-editor>
-
-            <v-btn color="primary" @click="downloadRDF" class="mb-2">Download RDF</v-btn>
           </div>
         </v-col>
       </v-row>
@@ -131,8 +130,7 @@ export default {
     },
     downloadRDF() {
       if (!this.serialized_rdf) {
-        this.alert_messages.push({message: 'No RDF content to download.', alert_type: 'error'});
-        return;
+        this.create_object();
       }
 
       const formatToExtension = {
