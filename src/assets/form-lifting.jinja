@@ -19,8 +19,12 @@
   {% if obj.description %}
 	dcterms:description """{{obj.description}}"""^^xsd:string ;
   {% endif %}
-  {% if obj.hasModelDiagram %}
+  {% if obj.modelDiagram %}
+  {% if obj.modelDiagram.url %}
   heat:hasModelDiagram <{{obj.modelDiagram.url | safe}}> ;
+  {% else %}
+  heat:hasModelDiagram <{{obj.modelDiagram | safe}}> ;
+  {% endif %}
   {% endif %}
   {% if obj.doi %}
 	dcterms:isReferencedBy <{{obj.doi | safe}}> ;
