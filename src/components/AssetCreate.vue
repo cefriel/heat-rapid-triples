@@ -240,7 +240,7 @@ export default {
       try {
         this.saved_asset_rdf = this.template.render({
           obj: this.asset,
-          base_prefix: "https://perks-project.eu/",
+          base_prefix: "https://knowledge.c-innovationhub.com/",
           slugify: slugify,
           uuid4: uuid4
         });
